@@ -1,4 +1,4 @@
-// app/page.tsx (Next.js 13+ App Router)
+
 
 import { Hero } from "@/components/Hero";
 import CallToAction from "../components/CallToAction";

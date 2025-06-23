@@ -21,6 +21,8 @@ const feeRanges = [
   '₹20,000 - ₹50,000',
   '₹30,000 - ₹60,000',
   '₹50,000 - ₹1,00,000',
+  '₹1,00,000 - ₹2,00,000',
+  '₹2,00,000 +',
   'Negotiable',
 ];
 
@@ -93,7 +95,7 @@ export default function OnboardForm() {
     setTimeout(() => {
       setSubmitted(false);
       setSubmissionStatus(null);
-    }, 3000); // Reset submitted state after 3 seconds
+    }, 3000); 
   };
 
 

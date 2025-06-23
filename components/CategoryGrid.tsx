@@ -37,10 +37,10 @@ export default function CategoryGrid() {
                 backgroundPosition: 'center'
               }}
             >
-              {/* Overlay */}
+             
               <div className="absolute inset-0  group-hover:bg-opacity-60 transition duration-300" />
 
-              {/* Text */}
+            
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <h4 className="text-white text-xl font-semibold drop-shadow-lg">{cat.name}</h4>
               </div>
