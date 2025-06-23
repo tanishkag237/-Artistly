@@ -73,31 +73,39 @@ export default function OnboardForm() {
   const selectedCategories = watch('category');
   const selectedLanguage = watch('languages');
 
-const onSubmit = async (data: FormValues) => {
-  const artistData = {
-    ...data,
-    image: data.image?.[0]?.name || '',
-  };
+// const onSubmit = async (data: FormValues) => {
+//   const artistData = {
+//     ...data,
+//     image: data.image?.[0]?.name || '',
+//   };
 
-  try {
-    const response = await fetch('http://localhost:3001/artists', {
-      method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(artistData),
-    });
+//   try {
+//     const response = await fetch('http://localhost:3001/artists', {
+//       method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify(artistData),
+//     });
 
-    if (!response.ok) throw new Error('Submission failed');
-    console.log('✅ Submitted');
-    setSubmitted(true);
-    reset();
-  } catch (error) {
-    console.error('❌ Submission error:', error);
-  }
-  setTimeout(() => {
-    setSubmitted(false);
-  }, 3000); // Reset submitted state after 3 seconds
-  reset();
+//     if (!response.ok) throw new Error('Submission failed');
+//     console.log('✅ Submitted');
+//     setSubmitted(true);
+//     reset();
+//   } catch (error) {
+//     console.error('❌ Submission error:', error);
+//   }
+//   setTimeout(() => {
+//     setSubmitted(false);
+//   }, 3000); // Reset submitted state after 3 seconds
+//   reset();
+// };
+
+const onSubmit = (data: FormValues) => {
+  const previous = JSON.parse(localStorage.getItem('artistSubmissions') || '[]');
+  const updated = [...previous, data];
+  localStorage.setItem('artistSubmissions', JSON.stringify(updated));
+  console.log('📦 New artist submission:', data);
 };
+
 
 
 
