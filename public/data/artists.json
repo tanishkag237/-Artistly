@@ -1,0 +1,61 @@
+[
+  {
+    "id": "a1",
+    "name": "Riya Sharma",
+    "category": "Singer",
+    "location": "Mumbai",
+    "feeRange": "₹20,000 - ₹50,000",
+    "languages": ["Hindi", "English"],
+    "image": "/artist/woman.jpg"
+  },
+  {
+    "id": "a2",
+    "name": "Kabir Mehta",
+    "category": "DJ",
+    "location": "Delhi",
+    "feeRange": "₹50,000 - ₹1,00,000",
+    "languages": ["Punjabi", "English"],
+    "image": "/artist/man.jpg"
+  },
+  {
+    "id": "a3",
+    "name": "Ananya Sen",
+    "category": "Dancer",
+    "location": "Kolkata",
+    "feeRange": "₹10,000 - ₹30,000",
+    "languages": ["Bengali", "Hindi"],
+    "image": "/artist/woman2.jpg"
+  },
+  {
+    "id": "a4",
+    "name": "Zaid Khan",
+    "category": "Speaker",
+    "location": "Bangalore",
+    "feeRange": "₹30,000 - ₹60,000",
+    "languages": ["English", "Hindi"],
+    "image": "/artist/man2.jpg"
+  },
+
+  {
+    "id": "a5",
+    "name": "Param Singh",
+    "category": "Speaker",
+    "location": "Bangalore",
+    "feeRange": "₹30,000 - ₹60,000",
+    "languages": ["English", "Hindi"],
+    "image": "/artist/man3.jpg"
+  },
+
+  {
+    "id": "a6",
+    "name": "Tisha Kapoor",
+    "category": "Singer",
+    "location": "Delhi",
+    "feeRange": "₹20,000 - ₹50,000",
+    "languages": ["Hindi", "English"],
+    "image": "/artist/woman3.jpg"
+  
+  }
+
+
+]

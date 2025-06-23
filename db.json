@@ -1,0 +1,22 @@
+
+{
+  "artists": [
+    {
+      "id": "7abf",
+      "name": "Priya Jain",
+      "bio": "Enthusiastic dancer with a passion for contemporary and classical styles. Experienced in performing at various cultural events and festivals.",
+      "category": [
+        "Dancer"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "feeRange": "₹30,000 - ₹60,000",
+      "location": "Delhi",
+      "otherCategory": "",
+      "otherLanguage": "",
+      "image": "pexels-olly-733872.jpg"
+    }
+  ]
+}
