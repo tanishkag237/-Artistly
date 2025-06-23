@@ -46,7 +46,8 @@ const schema = Yup.object({
 export type FormValues = Yup.InferType<typeof schema>;
 
 export default function OnboardForm() {
-  const [submitted, setSubmitted] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | null>(null);
 
   const {
     register,
@@ -73,38 +74,26 @@ export default function OnboardForm() {
   const selectedCategories = watch('category');
   const selectedLanguage = watch('languages');
 
-// const onSubmit = async (data: FormValues) => {
-//   const artistData = {
-//     ...data,
-//     image: data.image?.[0]?.name || '',
-//   };
 
-//   try {
-//     const response = await fetch('http://localhost:3001/artists', {
-//       method: 'POST',
-//   headers: { 'Content-Type': 'application/json' },
-//   body: JSON.stringify(artistData),
-//     });
+  const onSubmit = (data: FormValues) => {
+    try {
+      const previous = JSON.parse(localStorage.getItem('artistSubmissions') || '[]');
+      const updated = [...previous, data];
+      localStorage.setItem('artistSubmissions', JSON.stringify(updated));
+      console.log('📦 New artist submission:', data);
+      setSubmitted(true);
+      setSubmissionStatus('success');
+      reset();
+    } catch (error) {
+      console.error('❌ Submission error:', error);
+      setSubmissionStatus('error');
+    }
 
-//     if (!response.ok) throw new Error('Submission failed');
-//     console.log('✅ Submitted');
-//     setSubmitted(true);
-//     reset();
-//   } catch (error) {
-//     console.error('❌ Submission error:', error);
-//   }
-//   setTimeout(() => {
-//     setSubmitted(false);
-//   }, 3000); // Reset submitted state after 3 seconds
-//   reset();
-// };
-
-const onSubmit = (data: FormValues) => {
-  const previous = JSON.parse(localStorage.getItem('artistSubmissions') || '[]');
-  const updated = [...previous, data];
-  localStorage.setItem('artistSubmissions', JSON.stringify(updated));
-  console.log('📦 New artist submission:', data);
-};
+    setTimeout(() => {
+      setSubmitted(false);
+      setSubmissionStatus(null);
+    }, 3000); // Reset submitted state after 3 seconds
+  };
 
 
 
