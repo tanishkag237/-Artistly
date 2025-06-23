@@ -18,7 +18,7 @@ export default function AdminPage() {
   };
 
   return (
-    <div className="p-6 text-white">
+    <div className="p-3 text-white">
       <h1 className="text-4xl text-center font-bold mb-6">Manager Dashboard</h1>
       {submissions.length === 0 ? (
         <p className="text-center text-gray-400">No artist submissions available.</p>
