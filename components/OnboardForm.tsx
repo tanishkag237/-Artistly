@@ -21,6 +21,7 @@ const feeRanges = [
   '₹20,000 - ₹50,000',
   '₹30,000 - ₹60,000',
   '₹50,000 - ₹1,00,000',
+  'Negotiable',
 ];
 
 const schema = Yup.object({
